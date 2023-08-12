@@ -91,7 +91,7 @@ export const AddBillForm: React.FC<FormProps> = ({
     console.log("put bill to db");
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`http://localhost:3002/bills/${bill.id}`, {
+      fetch(`https://myexpenses-expressapi.onrender.com/bills/${bill.id}`, {
         method: "PUT",
         headers: {
           Authorization: token,
@@ -128,14 +128,17 @@ export const AddBillForm: React.FC<FormProps> = ({
     const token = localStorage.getItem("token");
     if (token) {
       try {
-        const response = await fetch("http://localhost:3002/addBill", {
-          method: "POST",
-          headers: {
-            Authorization: token,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bill),
-        });
+        const response = await fetch(
+          "https://myexpenses-expressapi.onrender.com/addBill",
+          {
+            method: "POST",
+            headers: {
+              Authorization: token,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bill),
+          }
+        );
 
         const responseData = await response.json();
         console.log(responseData);

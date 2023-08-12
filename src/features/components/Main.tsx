@@ -29,7 +29,7 @@ const Main = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3002/bills", {
+      fetch("https://myexpenses-expressapi.onrender.com/bills", {
         headers: {
           Authorization: token,
         },
@@ -94,7 +94,7 @@ const Main = () => {
           </div>
           <div className="container-content">
             {isLoading ? (
-              <CircularProgress size={80}/>
+              <CircularProgress size={80} />
             ) : (
               <>
                 {content.length ? (

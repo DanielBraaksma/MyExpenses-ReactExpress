@@ -199,7 +199,7 @@ export const Login = () => {
     // setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     const data = { password: formData.password, email: formData.email };
 
-    fetch(`http://localhost:3002/Login`, {
+    fetch(`https://myexpenses-expressapi.onrender.com/Login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -240,7 +240,7 @@ export const Login = () => {
       email: formData.email,
     };
 
-    fetch(`http://localhost:3002/register`, {
+    fetch(`https://myexpenses-expressapi.onrender.com/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

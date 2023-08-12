@@ -25,7 +25,7 @@ export const Bill = (props: Props) => {
   const handleDeleteBill = async (id: string) => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`http://localhost:3002/bills/${id}`, {
+      fetch(`https://myexpenses-expressapi.onrender.com/bills/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: token,
